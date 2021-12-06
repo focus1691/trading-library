@@ -1,0 +1,31 @@
+//@version=3
+study(title="Monthly, Weekly & Daily Levels", overlay=true)
+offset_val = input(title="Label Offset", type=integer, defval=20)
+showlabels = input(title="Show Labels", type=bool, defval=true)
+
+monthH = security(tickerid, 'M', high)[1]
+monthL = security(tickerid, 'M', low)[1]
+
+weekH = security(tickerid, 'W', high)[1]
+weekL = security(tickerid, 'W', low)[1]
+
+dayH = security(tickerid, 'D', high)[1]
+dayL = security(tickerid, 'D', low)[1]
+
+plot(monthH, title="Monthly High", style=line, linewidth=2, color=blue, show_last=1, trackprice=true, offset=offset_val)
+plot(monthL, title="Monthly Low", style=line, linewidth=2, color=blue, show_last=1, trackprice=true, offset=offset_val)
+
+plotshape(showlabels ? monthH : na, style=shape.labeldown, location=location.absolute, color=blue,  textcolor=color(white,0), show_last=1, text="Month High", offset=offset_val, transp=50)
+plotshape(showlabels ? monthL : na, style=shape.labelup, location=location.absolute, color=blue,  textcolor=color(white,0), show_last=1, text="Month Low",  offset=offset_val, transp=50)
+
+plot(weekH, title="Weekly High", style=line, linewidth=2, color=purple, show_last=1, trackprice=true, offset=offset_val)
+plot(weekL, title="Weekly Low", style=line, linewidth=2, color=purple, show_last=1, trackprice=true, offset=offset_val)
+
+plotshape(showlabels ? weekH : na, style=shape.labeldown, location=location.absolute, color=purple,  textcolor=color(white,0), show_last=1, text="Week High",  offset=offset_val, transp=50)
+plotshape(showlabels ? weekL : na, style=shape.labelup, location=location.absolute, color=purple,  textcolor=color(white,0), show_last=1, text="Week Low",  offset=offset_val, transp=50)
+
+plot(dayH, title="Daily High", style=line, linewidth=2, color=yellow, show_last=1, trackprice=true, offset=offset_val)
+plot(dayL, title="Daily Low", style=line, linewidth=2, color=yellow, show_last=1, trackprice=true, offset=offset_val)
+
+plotshape(showlabels ? dayH : na, style=shape.labeldown, location=location.absolute, color=yellow,  textcolor=color(white,0), show_last=1, text="Daily High",  offset=offset_val, transp=50)
+plotshape(showlabels ? dayL : na, style=shape.labelup, location=location.absolute, color=yellow,  textcolor=color(white,0), show_last=1, text="Daily Low",  offset=offset_val, transp=50)
