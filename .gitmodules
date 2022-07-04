@@ -1,6 +1,6 @@
 [submodule "algorithms/peak-signal-detection-zscores"]
 	path = algorithms/peak-signal-detection-zscores
-	url = git@github.com:Bluejay47/zScore.git
+	url = git@github.com:traderjosh/zScore.git
 [submodule "algorithms/harmonics-python"]
 	path = algorithms/harmonics-python
 	url = git@github.com:xxwikkixx/HarmonicPattern.git
