@@ -4,3 +4,6 @@
 [submodule "algorithms/harmonics-python"]
 	path = algorithms/harmonics-python
 	url = git@github.com:xxwikkixx/HarmonicPattern.git
+[submodule "algorithms/value-area"]
+	path = algorithms/value-area
+	url = git@github.com:traderjosh/ValueArea.git
